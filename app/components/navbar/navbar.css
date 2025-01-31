@@ -1,0 +1,77 @@
+header {
+  background: linear-gradient(to right, rgba(58, 38, 240, 0.95), rgba(34, 198, 227, 0.95));
+  box-shadow: var(--bs-box-shadow) !important;
+  z-index: 1000;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.contactLink {
+  position: relative;
+  padding: 0.5rem 2.5rem 0.5rem 0.4rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.6);
+  border-radius: 50rem;
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+.contactLink:hover {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #ededed;
+}
+
+.phoneIcon {
+  position: absolute;
+  background-color: var(--primary);
+  color: #ededed;
+  width: 1rem;
+  height: 1rem;
+  top: 50%;
+  padding: 7px;
+  right: 5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.navLink {
+  color: #c1c1c1
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.contact {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .contactLink {
+    display: none;
+  }
+
+  .contact {
+    display: block;
+  }
+
+  .contact:hover {
+    color: var(--foreground);
+  }
+
+  .navLinks {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  .navLinks.expanded {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
