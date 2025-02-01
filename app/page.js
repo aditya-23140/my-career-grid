@@ -72,7 +72,7 @@ export default function Home() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
-        className="frontSvg"
+        className="frontSvg lg:bottom-[13.9rem] md:bottom-40 sm:bottom-[8.75rem]"
         width="100%"
       >
         <defs>
@@ -83,6 +83,7 @@ export default function Home() {
         </defs>
         <path
           fillOpacity="1"
+          stroke="none"
           className="wave"
           d="M0,96L40,133.3C80,171,160,245,240,250.7C320,256,400,192,480,160C560,128,640,128,720,144C800,160,880,192,960,181.3C1040,171,1120,117,1200,106.7C1280,96,1360,128,1400,144L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
         ></path>
@@ -413,7 +414,11 @@ export default function Home() {
         id="testemonials"
         className="testemonials flex flex-col items-center cursor-default"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          className="bg-transparent relative -top-1"
+        >
           <path
             className="wave"
             fillOpacity="1"
@@ -547,7 +552,11 @@ export default function Home() {
           </div>
         </Carousel>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          className="relative -bottom-1"
+        >
           <path
             className="wave"
             fillOpacity="1"

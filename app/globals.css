@@ -90,11 +90,26 @@ h1 {
 }
 
 .frontSvg {
-  background: linear-gradient(to right,
-      rgba(58, 38, 240, 0.95),
-      rgba(34, 198, 227, 0.95));
+  background: transparent;
+  display: block;
+  overflow: hidden;
+  border: none;
+  outline: none;
   position: relative;
-  top: -1px;
+  margin: 0;
+  bottom: 4.35rem;
+}
+
+@media (min-width: 505px) {
+  .frontSvg {
+    bottom: 7rem;
+  }
+}
+
+@media (min-width: 396px) {
+  .frontSvg {
+    bottom: 5.5rem;
+  }
 }
 
 .wave {
