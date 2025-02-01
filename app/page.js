@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Navbar isExpanded={isExpanded} toggleNavbar={toggleNavbar} />
-      <section id="top" className="w-full frontSection cursor-default">
+      <section id="top" className="w-full lg:h-screen lg:pb-40 frontSection cursor-default">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -104,7 +104,7 @@ export default function Home() {
       ***************************************************************************************************/}
       <section
         id="services"
-        className="ourFeatures flex flex-col items-center cursor-default"
+        className="ourFeatures flex flex-col items-center cursor-default relative lg:-top-40"
       >
         <div className="container mb-10">
           <div className="row text-center">
