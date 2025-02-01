@@ -8,6 +8,7 @@
   /* --background-card-accent: #9926f0;
   --background-card2-accent: #d122e3; */
   --foreground: #171717;
+  --footer: #151414;
   --foreground-accent: #2d2d2d;
   --primary: #3a26f0;
   --secondary: #228fe3;
@@ -195,6 +196,10 @@ h1 {
 
 
 @media (max-width: 768px) {
+  .row h1 {
+    font-size: 2.5rem;
+  }
+
   .service {
     grid-template-columns: 1fr;
     position: relative;
@@ -345,7 +350,10 @@ h1 {
 
 .getStarted {
   padding: 4rem var(--getStartedPadding);
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .getStarted .form {
@@ -361,6 +369,7 @@ h1 {
   justify-self: end;
   /* min-width: fit-content; */
   max-width: 34rem;
+  border-radius: 2rem;
 }
 
 .gradient-text {
@@ -378,25 +387,33 @@ h1 {
   grid-template-columns: 1fr 1fr;
   width: 100%;
 }
+
 @media (max-width: 840px) {
-  :root{
+  :root {
     --getStartedPadding: 1rem;
   }
 
-  .getStartedRow{
-    grid-template-columns: 1fr;
-    justify-self: center;
+  .getStartedRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .getStartedRow .form{
-    display: block;
+  .gradient,
+  .getStartedRow .form {
     width: 100%;
+  }
+
+  .gradient h4 {
+    font-size: 2rem;
+
   }
 }
 
 .getStartedRow .form {
   background-color: var(--background);
   justify-self: start;
+  border-radius: 2rem;
 }
 
 .getStartedRow h4 {
@@ -437,14 +454,55 @@ h1 {
 .form-control {
   padding: 10px;
   border-radius: 0.5rem;
+  color: #171717;
   --tw-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.114), 0 0 10px 4px rgba(0, 0, 0, 0.21);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.form-control:focus {
+  outline: none;
+  --tw-shadow: 0 0 15px 2px rgba(137, 227, 255, 0.468), 0 0 10px 2px rgba(66, 179, 255, 0.21);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .formSubmit {
-  background: rgba(60, 34, 227, 0.95);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   color: white;
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.formSubmit:hover {
+  transform: scale(1.1);
+  --tw-shadow: 0 0 15px 2px rgba(137, 227, 255, 0.468), 0 0 10px 2px rgba(66, 179, 255, 0.21);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* FOOTER */
+
+.footer {
+  padding-top: 1rem;
+  background-color: var(--footer);
+}
+
+/* contact-box */
+
+.contact-box_icon {
+  width: 2.5rem;
+  stroke: var(--pComplement);
+}
+
+.contact-box_info {
+  padding: 0.4rem;
+}
+
+/* Changing icon size for small */
+@media (max-width: 840px) {
+  .contact-box_icon {
+    width: 2rem;
+  }
 }

@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
-  faLinkedinIn,
   faPaperPlane,
   faBriefcase,
   faClipboardUser,
@@ -17,7 +16,17 @@ import {
   faChevronLeft,
   faQuoteRight,
   faStar,
+  faArrowAltCircleUp,
+  faArrowCircleUp,
+  faChevronUp,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedin,
+  faFacebook,
+  faInstagram,
+  faTwitter,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
@@ -37,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Navbar isExpanded={isExpanded} toggleNavbar={toggleNavbar} />
-      <section className="w-full frontSection">
+      <section id="top" className="w-full frontSection cursor-default">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
@@ -92,7 +101,10 @@ export default function Home() {
       {/**************************************************************************************************
                                             START SECTION FOR SERVICES
       ***************************************************************************************************/}
-      <section id="services" className="ourFeatures flex flex-col items-center">
+      <section
+        id="services"
+        className="ourFeatures flex flex-col items-center cursor-default"
+      >
         <div className="container mb-10">
           <div className="row text-center">
             <h1 className="font-bold">Our Features</h1>
@@ -399,7 +411,7 @@ export default function Home() {
       ***************************************************************************************************/}
       <section
         id="testemonials"
-        className="testemonials flex flex-col items-center"
+        className="testemonials flex flex-col items-center cursor-default"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -412,7 +424,7 @@ export default function Home() {
           <div className="row text-center">
             <h1 className="font-bold">Testemonials</h1>
             <hr style={{ width: "100px", height: "3px" }} className="mx-auto" />
-            <p className="lead pt-4">what our clients are saying</p>
+            <p className="pt-4 text-gray-300">what our clients are saying</p>
           </div>
         </div>
 
@@ -429,7 +441,7 @@ export default function Home() {
           interval={5000}
           transitionTime={1000}
           stopOnHover={true}
-          className="carousel-container"
+          className="carousel-container flex flex-col items-center w-full"
           renderArrowPrev={(clickHandler, hasPrev) =>
             hasPrev && (
               <div className="absolute bottom-12 right-1/2 transform -translate-x-1 z-30 flex space-x-4">
@@ -494,7 +506,7 @@ export default function Home() {
             {/* client name and role */}
             <div className="testemonials_name">
               <h3>Gilgamesh</h3>
-              <p className="lead ">King Of Uruk</p>
+              <p className="text-gray-300 ">King Of Uruk</p>
             </div>
           </div>
           {/* Client 2 */}
@@ -530,7 +542,7 @@ export default function Home() {
             {/* client name and role */}
             <div className="testemonials_name">
               <h3>Gilgamesh</h3>
-              <p className="lead ">King Of Uruk</p>
+              <p className="text-gray-300 ">King Of Uruk</p>
             </div>
           </div>
         </Carousel>
@@ -547,10 +559,10 @@ export default function Home() {
                                             START Frequently Asked Questions
       ***************************************************************************************************/}
 
-      <section id="faq" className="faq py-12">
+      <section id="faq" className="faq py-12 cursor-default">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-6xl font-bold text-uppercase mb-2">FAQ</h1>
+          <div className="text-center mb-12 row">
+            <h1 className="font-bold text-uppercase mb-2">FAQ</h1>
             <div className="headingLine"></div>
             <p className="lead">
               Frequently asked questions, get knowledge beforehand
@@ -743,13 +755,11 @@ export default function Home() {
 
       <section
         id="contact"
-        className="getStarted bg-blue-100 dark:bg-neutral-800"
+        className="getStarted bg-blue-100 dark:bg-neutral-800 cursor-default"
       >
         <div className="container m-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-6xl font-bold text-uppercase mb-4">
-              Get Started
-            </h1>
+          <div className="text-center mb-12 row">
+            <h1 className="font-bold text-uppercase mb-4">Get Started</h1>
             <div className="headingLine"></div>
             <p className="lead">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
@@ -757,9 +767,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="getStartedRow text-white w-full mb-12">
+          <div className="getStartedRow text-white mb-12">
             <div className="gradient shadow-lg">
-              <div className="cta-info w-100">
+              <div className="cta-info">
                 <h4 className="font-bold text-5xl leading-tight">
                   100% Satisfaction Guaranteed
                 </h4>
@@ -842,7 +852,270 @@ export default function Home() {
       {/**************************************************************************************************
                                             START Footer SECTION
       ***************************************************************************************************/}
-      <section id="footer" className="flex flex-col items-center"></section>
+      <footer className="footer flex flex-col items-center cursor-default">
+        <div className="w-full pb-8">
+          <div className="flex justify-around sm:flex-row flex-col">
+            {/* FOR MOBILE */}
+            <div className="relative contact-box pt-1 md:block lg:flex flex items-center">
+              <div className="contact-box_icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-phone-call"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+                  <path d="M15 7a2 2 0 0 1 2 2" />
+                  <path d="M15 3a6 6 0 0 1 6 6" />
+                </svg>
+              </div>
+              <div className="contact-box_info">
+                <Link
+                  href="/"
+                  className="md:text-xl text-base font-semibold gradient-text hover:text-blue-500"
+                >
+                  +91 9982122018
+                </Link>
+                <p className="text-gray-600 text-sm">Monday-Fri 9am-6pm</p>
+              </div>
+            </div>
+            {/* FOR EMAIL */}
+            <div className="contact-box pt-1 md:block lg:flex flex items-center">
+              <div className="contact-box_icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-mail-opened"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M3 9l9 6l9 -6l-9 -6l-9 6" />
+                  <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+                  <path d="M3 19l6 -6" />
+                  <path d="M15 13l6 6" />
+                </svg>
+              </div>
+              <div className="contact-box_info">
+                <Link
+                  href="/"
+                  className="md:text-xl text-base font-semibold gradient-text hover:text-blue-500"
+                >
+                  info@gmail.com
+                </Link>
+                <p className="text-gray-600 text-sm">subtitle goes here</p>
+              </div>
+            </div>
+            {/* LOCATION */}
+            <div className="contact-box pt-1 md:block lg:flex flex items-center">
+              <div className="contact-box_icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="icon icon-tabler icons-tabler-outline icon-tabler-map-2"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+                  <path d="M9 4v13" />
+                  <path d="M15 7v5.5" />
+                  <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z" />
+                  <path d="M19 18v.01" />
+                </svg>
+              </div>
+              <div className="contact-box_info">
+                <Link
+                  href="/"
+                  className="md:text-xl text-base font-semibold gradient-text hover:text-blue-500"
+                >
+                  Jabalpur, Madhya Pradesh
+                </Link>
+                <p className="text-gray-600 text-sm">subtitle goes here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <hr className="m-6 w-8/12" /> */}
+        {/* START THE SOCIAL MEDIA */}
+        <div className="socialMedia bg-[#212121] w-full p-6 mb-8">
+          <div className="flex justify-around items-center sm:flex-row flex-col">
+            <div className="text-center md:text-lg text-base gradient-text sm:mb-0 mb-2">
+              Connect with us on social media
+            </div>
+            <div className="icons flex sm:justify-around justify-center items-center">
+              <div className="socialMedia_icon mr-6 ">
+                <Link href="/" className="text-3xl text-[#1976d2]">
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="hover:scale-125 transition-all ease-in-out"
+                  />
+                </Link>
+              </div>
+              <div className="socialMedia_icon mr-6 ">
+                <Link href="/" className="text-3xl text-[#1976d2]">
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className="hover:scale-125 transition-all ease-in-out"
+                  />
+                </Link>
+              </div>
+              <div className="socialMedia_icon mr-6 ">
+                <Link href="/" className="text-3xl text-[#1976d2]">
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="hover:scale-125 transition-all ease-in-out"
+                  />
+                </Link>
+              </div>
+              <div className="socialMedia_icon mr-6 ">
+                <Link href="/" className="text-3xl text-[#1976d2]">
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className="hover:scale-125 transition-all ease-in-out"
+                  />
+                </Link>
+              </div>
+              <div className="socialMedia_icon mr-6 ">
+                <Link href="/" className="text-3xl text-[#1976d2]">
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    className="hover:scale-125 transition-all ease-in-out"
+                  />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Start the Company Info */}
+        <div className="socialMedia w-full p-6 mb-8">
+          <div className="flex justify-between items-top sm:flex-row flex-col lg:flex-nowrap flex-wrap gap-8 cursor-default">
+            <div className="sm:mb-0 mb-2 md:w-7/12 mr-3">
+              <h5 className="capitalize font-bold gradient-text text-xl">
+                Company Name
+              </h5>
+              <hr className="block mt-2 mb-4 w-28 border-t-2 border-gray-500" />
+              <p className="text-gray-400">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Cupiditate corporis tempora, reiciendis architecto odit
+                assumenda nemo facere?
+              </p>
+            </div>
+            {/* Products Links */}
+            <div className="sm:mb-0 mb-2 md:w-3/12">
+              <h5 className="capitalize font-bold text-xl gradient-text">
+                Products
+              </h5>
+              <hr className="block mt-2 mb-4 w-16 border-t-2 border-gray-500" />
+              <ul className="text-gray-300 w-full">
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* UseFul Links */}
+            <div className="sm:mb-0 mb-2 md:w-3/12">
+              <h5 className="capitalize font-bold gradient-text text-xl">
+                Useful Links
+              </h5>
+              <hr className="block mt-2 mb-4 w-24 border-t-2 border-gray-500" />
+              <ul className="text-gray-300">
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Your Account
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Become an Affiliate
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Create an account
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Help
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            {/* Contact links */}
+            <div className="sm:mb-0 mb-2 md:w-3/12">
+              <h5 className="capitalize font-bold gradient-text text-xl">
+                Contact
+              </h5>
+              <hr className="block mt-2 mb-4 w-16 border-t-2 border-gray-500" />
+              <ul className="text-gray-300">
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+                <li className="pb-1">
+                  <Link href="/" className="hover:text-blue-300">
+                    Lorem ipsum
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/* START THE COPYRIGHT AREA */}
+        <div className="copyright bg-black text-gray-400 p-12 w-full text-center">
+          &#169; Copyright 2025{" "}
+          <Link className="hover:text-[#22C6E3F2] gradient-text" href="/">
+            MyCareerGrid App
+          </Link>{" "}
+          | Created by{" "}
+          <Link className="hover:text-[#22C6E3F2] gradient-text" href="/">
+            Aditya Kumar
+          </Link>
+        </div>
+      </footer>
+      {/* Button to top */}
+      <Link href="#top" className="text-white self-center scroll-smooth">
+        <button className="backToTop rounded-full w-12 h-12 fixed bottom-8 right-8 z-50 bg-[#224fe3f2] p-2">
+          <FontAwesomeIcon icon={faChevronUp} />
+        </button>
+      </Link>
     </>
   );
 }
